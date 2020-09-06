@@ -20,15 +20,26 @@ namespace SalesTax
             for (int i = 0; i < NumItems; i++)
             {
                 string Name;
-                Console.WriteLine("Enter name of product: ");
+                if (i == 0)
+                {
+                    Console.WriteLine("Enter name of product: ");
+                }
+                else
+                {
+                    Console.WriteLine("Enter name of next product: ");
+                }
                 Name = Console.ReadLine();
                 decimal Price;
                 Console.WriteLine("Enter price of item: ");
                 Price = Convert.ToDecimal(Console.ReadLine());
-                string Type;
-                Console.WriteLine("Enter type of product (Book, Food, Music, Imported, etc: ");
-                Type = Console.ReadLine();
-
+                string yesorno;
+                bool isTaxable = true;
+                Console.WriteLine("Is the product a Book, Food, or Medical Product? (Y/N): ");
+                yesorno = Console.ReadLine();
+                if (yesorno == "Y" || yesorno == "y")
+                {
+                    isTaxable = false;
+                }
             }
 
         }

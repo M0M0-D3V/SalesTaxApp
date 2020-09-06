@@ -1,0 +1,11 @@
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.exe
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.deps.json
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.runtimeconfig.json
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.runtimeconfig.dev.json
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.dll
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\bin\Debug\netcoreapp3.1\SalesTax.pdb
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.csprojAssemblyReference.cache
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.AssemblyInfoInputs.cache
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.AssemblyInfo.cs
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.dll
+D:\OneDrive\Momo's Folder\m0m0-d3v\SalesTax\obj\Debug\netcoreapp3.1\SalesTax.pdb
