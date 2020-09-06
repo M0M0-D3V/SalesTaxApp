@@ -10,6 +10,7 @@ namespace SalesTax
         // constructor, receive list
         public ShoppingBasket()
         {
+            MyCart = new List<IPurchaseable>();
             // Console.ReadLine() a bunch of questions to get what user is buying
             // Ask User how many items they are buying and set that int as number of loops.
             int NumItems;
@@ -40,6 +41,12 @@ namespace SalesTax
                 {
                     isTaxable = false;
                 }
+                MyCart.Add(new Item(Name, "At", Price, isTaxable));
+                Console.WriteLine($"MyCart has now: {MyCart[i].Name}, {MyCart[i].Price}, Taxable:{MyCart[i].isTaxable}");
+            }
+            for (int i = 0; i < NumItems; i++)
+            {
+                Console.WriteLine($"MyCart Item {i} is: {MyCart[i].Name} - {MyCart[i].Price}");
             }
 
         }
