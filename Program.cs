@@ -13,13 +13,14 @@ namespace SalesTax
             //  this means tax is rounded from $0.56 to $0.60
 
             // STEPS TO BUILD:
-            // [] Input ShoppingBasket: List of Dictionaries
+            // [x] Input ShoppingBasket: List of Dictionaries
             // [] Interface Sales Tax add 10%
-            //  [] Exception are books, food, and medical products
+            //  [x] Exception are books, food, and medical products
             // [] Interface Import tax add 5%, no exceptions
 
             // ShoppingBasket will ask user what items to put in their basket
             ShoppingBasket basket1 = new ShoppingBasket();
+            Console.WriteLine($"back to program and basket1 now has: {basket1.MyCart.Count} items");
         }
     }
 }
