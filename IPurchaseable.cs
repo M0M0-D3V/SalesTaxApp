@@ -2,7 +2,8 @@ namespace SalesTax
 {
     public interface IPurchaseable
     {
-        // qty, name, at, price
+        // qty, name, at, price,
+        int Quantity { get; set; }
         string Name { get; set; }
         string At { get; set; }
         decimal Price { get; set; }

@@ -14,7 +14,7 @@ namespace SalesTax
             // [x] Console.ReadLine() a bunch of questions to get what user is buying
             // [x] Ask User how many items they are buying and set that int as number of loops.
             int NumItems;
-            Console.WriteLine("Number of items purchasing?: ");
+            Console.WriteLine("Total number of items purchasing?: ");
             NumItems = Convert.ToInt32(Console.ReadLine());
 
             // [x] loop through mylist and check if item is taxable
@@ -30,6 +30,9 @@ namespace SalesTax
                     Console.WriteLine("Enter name of next product: ");
                 }
                 Name = Console.ReadLine();
+                int Quantity;
+                Console.WriteLine("Enter how many of this product: ");
+                Quantity = Convert.ToInt32(Console.ReadLine());
                 decimal Price;
                 Console.WriteLine("Enter price of item: ");
                 Price = Convert.ToDecimal(Console.ReadLine());
@@ -37,18 +40,28 @@ namespace SalesTax
                 bool isTaxable = true;
                 Console.WriteLine("Is the product a Book, Food, or Medical Product? (Y/N): ");
                 yesorno = Console.ReadLine();
-                if (yesorno == "Y" || yesorno == "y")
+                if (yesorno.ToLower() == "y")
                 {
                     isTaxable = false;
                 }
-                MyCart.Add(new Item(Name, "At", Price, isTaxable));
+                MyCart.Add(new Item(Quantity, Name, "At", Price, isTaxable));
                 Console.WriteLine($"MyCart has now: {MyCart[i].Name}, {MyCart[i].Price}, Taxable:{MyCart[i].isTaxable}");
             }
             for (int i = 0; i < NumItems; i++)
             {
                 Console.WriteLine($"MyCart Item {i} is: {MyCart[i].Name} - {MyCart[i].Price}");
             }
-
+        }
+        public decimal CheckOut(List<IPurchaseable> myCart)
+        {
+            // [] Receive myCart list and loop through to get price
+            // [] nest f(x) call to calculate tax/import if item requires
+            decimal total = 0.00M;
+            foreach (IPurchaseable item in myCart)
+            {
+                total += item.GetPrice();
+            }
+            return decimal.Round(total, 2);
         }
     }
 }
