@@ -14,18 +14,13 @@ namespace SalesTax
 
             // STEPS TO BUILD:
             // [x] Input ShoppingBasket: List of Dictionaries
-            // [] Interface Sales Tax add 10%
-            //  [x] Exception are books, food, and medical products
-            // [] Interface Import tax add 5%, no exceptions
-            // [] Implement "CheckOut" Method from ShoppingBasket
+            // [x] Exception are books, food, and medical products
+            // [x] Implement "CheckOut" Method from ShoppingBasket
 
             // ShoppingBasket will ask user what items to put in their basket
             ShoppingBasket basket1 = new ShoppingBasket();
-            Console.WriteLine($"back to program and basket1 now has: {basket1.MyCart.Count} items");
-
-            decimal totalCost = basket1.CheckOut(basket1.MyCart);
-            Console.WriteLine($"Total cost is now: {totalCost}");
-            // var Receipt = basket1.
+            List<string> myReceipt = basket1.CheckOut(basket1.MyCart);
+            Console.WriteLine($"Printing Receipt: {myReceipt}");
         }
     }
 }

@@ -49,19 +49,45 @@ namespace SalesTax
             }
             for (int i = 0; i < NumItems; i++)
             {
-                Console.WriteLine($"MyCart Item {i} is: {MyCart[i].Name} - {MyCart[i].Price}");
+                Console.WriteLine($"{MyCart[i].Quantity} {MyCart[i].Name} at {MyCart[i].Price}");
             }
         }
-        public decimal CheckOut(List<IPurchaseable> myCart)
+        public List<string> CheckOut(List<IPurchaseable> myCart)
         {
-            // [] Receive myCart list and loop through to get price
-            // [] nest f(x) call to calculate tax/import if item requires
+            // [x] Receive myCart list and loop through to get price
+            // [x] nest f(x) call to calculate tax/import if item requires
             decimal total = 0.00M;
+            decimal totalSansTax = 0.00M;
+            List<string> myReceipt = new List<string>();
             foreach (IPurchaseable item in myCart)
             {
-                total += item.GetPrice();
+                decimal itemPrice = item.Price * item.Quantity;
+                totalSansTax += itemPrice;
+                decimal price = item.GetPrice();
+                total += price;
+                string formatItem = "";
+                // [] if Quantity or next item has same name then format together
+                if (item.Quantity > 1)
+                {
+                    // [] if multiple items, format: Name: Price (# @ CalculatedPrice)
+                    formatItem = $"{item.Name}: ({item.Quantity} there should be more here)";
+                }
+                else
+                {
+                    // [x] format string: Name: Price
+                    formatItem = $"{item.Name}: {price}";
+                    // [x] add formatted string to list myReceipt
+                    myReceipt.Add(new string(formatItem));
+                }
             }
-            return decimal.Round(total, 2);
+            // [x] after looping item list, add to receipt the sales tax total
+            decimal SalesTax = total - totalSansTax;
+            myReceipt.Add(new string($"Sales Taxes: {SalesTax}"));
+            // [x] add last to list the grand total price
+            myReceipt.Add(new string($"Total: {total}"));
+            // return decimal.Round(total, 2);
+            // [x] return list of strings formatted as myReceipt
+            return myReceipt;
         }
     }
 }
