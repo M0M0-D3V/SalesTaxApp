@@ -29,6 +29,11 @@ namespace SalesTax
         public decimal GetPrice()
         {
             Price *= Quantity;
+            Price += GetTaxAmt();
+            return decimal.Round(Price, 2);
+        }
+        public decimal GetTaxAmt()
+        {
             decimal TaxRate = 0.10M;
             decimal ImportRate = 0.05M;
             decimal Calculate = 0.00M;
@@ -40,7 +45,6 @@ namespace SalesTax
             {
                 Calculate += Math.Round(Price * ImportRate) * 20 / 20;
             }
-            Calculate += Price;
             return decimal.Round(Calculate, 2);
         }
     }
